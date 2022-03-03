@@ -29,6 +29,9 @@ export default {
         }
       }
     },
+    methods:{
+
+    },
     mounted() {
       this.$bus.$on('updateListData',(data)=>{
          this.info = {...this.info,...data} //相当于比对属性,属性相同以后边为主
