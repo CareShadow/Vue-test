@@ -1,73 +1,45 @@
 <template>
-	<div class="container">
-    <Search/>
-    <List/>
-  </div>
+    <div class="container">
+      <Category title="美食">
+        <template slot="first">
+        <img src="https://s3.ax1x.com/2021/01/16/srJlq0.jpg" alt="">
+        </template>
+         <template slot="footer">
+        <img src="https://s3.ax1x.com/2021/01/16/srJlq0.jpg" alt="">
+        </template>
+      </Category>
+
+      <Category title="游戏">
+        <ul>
+          <li v-for="(g,index) in games" :key="index">{{g}}</li>
+        </ul>
+      </Category>
+
+      <Category title="电影">
+        <video controls src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
+      </Category>
+    </div>
 </template>
 
 <script>
 	//引入组件
-  import Search from './components/Search'
-  import List from './components/List'
+  import Category from './components/Category.vue'
 	export default {
 		name:'App',
-		components:{
-			Search,
-			List,
-    },
-  
-Search  
+		components:{Category},
+		data() {
+			return {
+				foods:['火锅','烧烤','小龙虾','牛排'],
+				games:['红色警戒','穿越火线','劲舞团','超级玛丽'],
+				films:['《教父》','《拆弹专家》','《你好，李焕英》','《尚硅谷》']
+			}
+		},
 	}
 </script>
+
 <style>
-/*base*/
-body {
-  background: #fff;
-}
-
-.btn {
-  display: inline-block;
-  padding: 4px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
-}
-
-.btn-danger {
-  color: #fff;
-  background-color: #da4f49;
-  border: 1px solid #bd362f;
-}
-
-.btn-edit {
-  color: #fff;
-  background-color: skyblue;
-  border: 1px solid rgb(47, 102, 124);
-  margin: 5px;
-}
-
-.btn-danger:hover {
-  color: #fff;
-  background-color: #bd362f;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.todo-container {
-  width: 600px;
-  margin: 0 auto;
-}
-.todo-container .todo-wrap {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
+ .container{
+   display: flex;
+   justify-content: space-around;
+ }
 </style>
