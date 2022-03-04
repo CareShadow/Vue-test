@@ -2,8 +2,6 @@
   <div class="category">
       <h3>{{title}}分类</h3>
       <slot name="first">我是一些默认值，当使用者没有传递具体结构时，我会出现</slot>
-      <h3>分割</h3>
-      <slot name="footer">我是一些默认值，当使用者没有传递具体结构时，我会出现</slot>
   </div>
 </template>
 

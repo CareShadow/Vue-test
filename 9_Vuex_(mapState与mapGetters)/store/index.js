@@ -20,7 +20,7 @@ const actions ={
 //准备mutations对象--修改state中数据
 const mutations = {
     JIA(state,value){
-        console.log(state,value);
+        console.log(state);
         state.sum+=value
     },
     JIAN(state,value){

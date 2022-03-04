@@ -20,7 +20,7 @@ const actions ={
 //准备mutations对象--修改state中数据
 const mutations = {
     JIA(state,value){
-        console.log(state,value);
+        console.log(state);
         state.sum+=value
     },
     JIAN(state,value){
@@ -31,16 +31,9 @@ const mutations = {
 const state ={
     sum:0
 }
-//准备getter对象
-const getters ={
-    bigSum(state){
-        return state.sum*10
-    }
-}
 
 export default new Vuex.Store({
     actions,
     mutations,
-    state,
-    getters
+    state
 })
